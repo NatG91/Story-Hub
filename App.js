@@ -6,29 +6,22 @@ import {createBottomTabNavigator} from 'react-navigation-tabs';
 import WriteStoryScreen from './Screens/WriteStoryScreen';
 import ReadStoryScreen from './Screens/ReadStoryScreen'
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+export default class App extends React.Component {
+  render(){
+    return(
+      <AppContainer/>
+    );
+  }
 }
 export const AppNavigator = createBottomTabNavigator({
   ReadAStory: {
       screen: ReadStoryScreen,
-      navigationOptions:{
-          tabBarIcon: <Image source={require('./assets/read.png')} style={{width:20, height:20}}/>,
-          tabBarLabel: "Read A Story"
-      }
   },
   WriteAStory: {screen: WriteStoryScreen,
-      navigationOptions:{
-          tabBarIcon: <Image source={require('./assets/write.png')} style={{width:20, height:20}}/>,
-          tabBarLabel: "Write A Story"
-      }
   }
 })
+const AppContainer = createAppContainer(AppNavigator);
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
