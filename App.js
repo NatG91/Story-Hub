@@ -28,7 +28,7 @@ export const AppNavigator = createBottomTabNavigator({
       tabBarIcon: ()=>{
         const routeName = navigation.state.routeName;
         console.log(routeName)
-        if(routeName === "WriteStoryScreen"){
+        if(routeName === "WriteAStory"){
           return(
             <Image
             source={require("./assets/write.png")}
@@ -37,7 +37,7 @@ export const AppNavigator = createBottomTabNavigator({
           )
           
         }
-        else if(routeName === "ReadStoryScreen"){
+        else if(routeName === "ReadAStory"){
           return(
             <Image
             source={require("./assets/read.png")}
